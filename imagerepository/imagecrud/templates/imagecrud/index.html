@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Main Page</title>
+  </head>
+  <body>
+    <a>Create a User</a>
+    <form action="/mainmenu/" method="post">
+        <label for="your_username">Username: </label>
+        <input id="your_username" type="text" name="your_name" value="{{ current_name }}">
+        <label for="your_password">Password: </label>
+        <input id="your_password" type="password" name="your_name" value="{{ current_password }}">
+        <input type="submit" value="OK">
+    </form>
+    <a href="">If you already are a User, click here for the login page</a>
+    <!-- <p>This is my page</p>
+    <li>{{ user.wallet }}</li>
+    <li>{{ image.price }}</li>
+    <li><a href="/imagecrud/{{ image.id }}/{{ user.id }}/buy/">buy</a></li> -->
+
+  </body>
+</html>
