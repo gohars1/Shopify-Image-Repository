@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    {% load static %}
+    {% for user_image in user_images %}
+    <div class="row">
+    <div class="column">
+      
+      <img src="{% static 'imagecrud/'%}{{ user_image.imgurl }}" alt="My image" width=100%>      
+      </div>
+    </div>
+    {% endfor %}
+    </body>
+</html>

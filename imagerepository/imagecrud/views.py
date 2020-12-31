@@ -45,3 +45,16 @@ def buy(request, image_id, user_id):
     context = { 'images' : images , 'user' : user }
 
     return HttpResponse(template.render(context, request))
+
+def view_photos(request):
+    user_id = User.objects.get(username=request.user.username).id
+    user_images = UserImages.objects.filter(user_id=user_id)
+    images = []
+    for i in user_images:
+        current_image = Image.objects.get(i.image_id)
+        
+    template = loader.get_template('imagecrud/view_photos.html')
+
+    context = { 'images' : images }
+
+    return HttpResponse(template.render(context, request))
