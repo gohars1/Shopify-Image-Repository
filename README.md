@@ -8,7 +8,7 @@ To run this application you must have python installed.
 
 To use Django, you can install it globally on your machine or install it in a python virtual environment.
 
-Once you have Django installed, you should be able to move on to Usage.
+Once you have Django installed, you can begin running the application.
 
 ### Usage
 To get started clone the repo with the following command:
