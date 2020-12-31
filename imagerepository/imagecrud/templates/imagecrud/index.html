@@ -6,153 +6,32 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
   <body>
+  
+    <nav class="navbar fixed-top navbar-light bg-light">
+      <a class="navbar-brand" href="/">Home</a>
+      <a class="ml-auto">Wallet: {{ user.wallet }}</a>
+    </nav>
+  </br>
+</br>
+</br>
+    {% load static %}
+    {% for image in images %}
     <div class="card mb-3" style="max-width: 100%;">
       <div class="row no-gutters">
         <div class="col-md-4">
-          {% load static %}
-          <img src="{% static 'imagecrud/Programming.jpg' %}" alt="My image" width=100%>    
+          
+          <img src="{% static 'imagecrud/'%}{{ image.imgurl }}" alt="My image" width=100%>    
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">Programming</h5>
-            <p class="card-text">Price: 20$</p>
-            <p class="card-text">Stock: 10</p>
+            <h5 class="card-title">{{ image.imgurl }}</h5>
+            <p class="card-text">Price: {{ image.price }}</p>
+            <p class="card-text">Stock: {{ image.stock }}</p>
+            <p class="card-text"><a href="/imagecrud/{{ image.id }}/{{ user.id }}/buy">Buy</a></p>
           </div>
         </div>
       </div>
     </div>
-    <div class="card mb-3" style="max-width: 100%;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          {% load static %}
-          <img src="{% static 'imagecrud/Technology.jpg' %}" alt="My image" width=100%>    
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Technology</h5>
-            <p class="card-text">Price: 20$</p>
-            <p class="card-text">Stock: 10</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class="card mb-3" style="max-width: 100%;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          {% load static %}
-          <img src="{% static 'imagecrud/cooking.jpg' %}" alt="My image" width=100%>    
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Cooking</h5>
-            <p class="card-text">Price: 15$</p>
-            <p class="card-text">Stock: 8</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card mb-3" style="max-width: 100%;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          {% load static %}
-          <img src="{% static 'imagecrud/reading.jpg' %}" alt="My image" width=100%>    
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Reading</h5>
-            <p class="card-text">Price: 15$</p>
-            <p class="card-text">Stock: 8</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card mb-3" style="max-width: 100%;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          {% load static %}
-          <img src="{% static 'imagecrud/Travel.jpg' %}" alt="My image" width=100%>    
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Travel</h5>
-            <p class="card-text">Price: 15$</p>
-            <p class="card-text">Stock: 8</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card mb-3" style="max-width: 100%;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          {% load static %}
-          <img src="{% static 'imagecrud/squats.jpg' %}" alt="My image" width=100%>    
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Weightlifting</h5>
-            <p class="card-text">Price: 15$</p>
-            <p class="card-text">Stock: 8</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card mb-3" style="max-width: 100%;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          {% load static %}
-          <img src="{% static 'imagecrud/Running.jpg' %}" alt="My image" width=100%>    
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Running</h5>
-            <p class="card-text">Price: 15$</p>
-            <p class="card-text">Stock: 8</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card mb-3" style="max-width: 100%;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          {% load static %}
-          <img src="{% static 'imagecrud/Boxing.jpg' %}" alt="My image" width=100%>    
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Boxing</h5>
-            <p class="card-text">Price: 15$</p>
-            <p class="card-text">Stock: 8</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card mb-3" style="max-width: 100%;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          {% load static %}
-          <img src="{% static 'imagecrud/Basketball.jpg' %}" alt="My image" width=100%>    
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Basketball</h5>
-            <p class="card-text">Price: 15$</p>
-            <p class="card-text">Stock: 8</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    </div>
-
-
-        
-
-
-    <!-- <p>This is my page</p>
-    <li>{{ user.wallet }}</li>
-    <li>{{ image.price }}</li>
-    <li><a href="/imagecrud/{{ image.id }}/{{ user.id }}/buy/">buy</a></li> -->
-
+    {% endfor %}
   </body>
 </html>

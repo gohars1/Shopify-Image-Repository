@@ -7,59 +7,41 @@ from .models import UserImages
 
 def index(request):
     template = loader.get_template('imagecrud/index.html')
-
-    return HttpResponse(template.render({}, request))
-
-def home(request):
-    template = loader.get_template('templates/home.html')
-    context = { "something" : 100 }
+    images = Image.objects.all()
+    user = User.objects.get(username=request.user.username).userinfo
+    context = { 'images' : images , 'user' : user }
 
     return HttpResponse(template.render(context, request))
-
-def create_user(request):
-    username = request.POST.get('username', '')
-    password = request.POST.get('password', '')
-    print(username)
-    user = User.objects.create_user(username,'', password)
-    user.save()
-
-    template = loader.get_template('imagecrud/mainpage.html')
-    context = {
-        'user' : user,
-    }
-    return HttpResponse(template.render(context, request))
-# def index(request):
-#     user = User()
-#     user.save()
-#     image = Image(name="art", price=10)
-#     image.save()
-#     # wallet_amount = user.wallet
-#     # image_price = image.price
-#     template = loader.get_template('imagecrud/index.html')
-#     context = {
-#         'user' : user,
-#         'image' : image
-#     }
-#     return HttpResponse(template.render(context, request))
 
 def buy(request, image_id, user_id):
 
     image = Image.objects.get(id=image_id)
-    user = User.objects.get(id=user_id) 
+    user = User.objects.get(id=user_id).userinfo 
     new_wallet = user.wallet - image.price
     user.wallet = new_wallet
     user.save()
     new_stock = Image.objects.get(id=image_id).stock - 1
     image.stock = new_stock
     image.save()
-    owned_images = UserImages(image_id, user_id)
-    owned_images.save()
+    user = User.objects.get(username=request.user.username)
+    if (UserImages.objects.filter(image_id=image,user_id=user).exists()):
 
+        userimage = UserImages.objects.get(image_id=image,user_id=user)
+        print(userimage.count)
+        new_count = userimage.count + 1
+        print(new_count)
+        userimage.count = new_count
+        print(userimage, userimage.count)
+        userimage.save()
+    else:
 
+        owned_images = UserImages(image_id=image,user_id=user)
+        owned_images.save()
+
+    user = User.objects.get(username=request.user.username).userinfo
     template = loader.get_template('imagecrud/buy.html')
-    context = {
-        'user' : user,
-        'image' : image,
-        'new_stock' : new_stock
-    }
+    images = Image.objects.all()
+
+    context = { 'images' : images , 'user' : user }
+
     return HttpResponse(template.render(context, request))
