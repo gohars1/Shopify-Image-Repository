@@ -24,7 +24,7 @@ Finally, you can run the server with the following command:
 ```
 python manage.py runserver
 ```
-Once the server is run, you can begin using the web application with the following URL: http://127.0.0.1:8000/
+Once the server is run, you can begin using the web application with the following URL http://127.0.0.1:8000/
 
 Here you should encounter the following screen:
 
