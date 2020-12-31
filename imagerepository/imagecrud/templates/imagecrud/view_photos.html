@@ -1,19 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Main Page</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  </head>
-  <body>
-    {% load static %}
-    {% for user_image in user_images %}
-    <div class="row">
-    <div class="column">
-      
-      <img src="{% static 'imagecrud/'%}{{ user_image.imgurl }}" alt="My image" width=100%>      
-      </div>
-    </div>
-    {% endfor %}
-    </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Main Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    div.gallery {
+      margin: 1%;
+      border: 0.1% solid #ccc;
+      float: left;
+      width: 25%;
+    }
+
+    div.gallery:hover {
+      border: 0px solid #777;
+    }
+
+    div.gallery img {
+      width: 100%;
+      height: auto;
+    }
+
+    div.desc {
+      padding: 5%;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar fixed-top navbar-light bg-light">
+    <a class="navbar-brand" href="/">Home</a>
+  </nav>
+</br>
+</br>
+</br>
+  {% load static %}
+  {% for image in images %}
+  <div class="gallery">
+    <a target="_blank" href="">
+      <img src="{% static 'imagecrud/'%}{{ image.imgurl }}" alt="My image" width=100%>
+    </a>
+  </div>
+  {% endfor %}
+</body>
+
 </html>
