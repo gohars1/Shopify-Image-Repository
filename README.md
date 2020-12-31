@@ -28,7 +28,7 @@ Once the server is run, you can begin using the web application with the followi
 
 Here you should encounter the following screen:
 
-![alt text](https://github.com/gohars1/Shopify-Image-Repository/readme-snapshots/login.JPG)
+![alt text](https://github.com/gohars1/Shopify-Image-Repository/blob/main/readme-snapshots/login.JPG)
 
 If you have already created an account, you can click "login". Otherwise, you can create a new user with the button "Create new user"
 
