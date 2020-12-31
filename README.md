@@ -28,17 +28,17 @@ Once the server is run, you can begin using the web application with the followi
 
 Here you should encounter the following screen:
 
-![home](https://github.com/gohars1/Shopify-Image-Repository/blob/main/readme-snapshots/login.JPG =75x75)
+![home](https://github.com/gohars1/Shopify-Image-Repository/blob/main/readme-snapshots/login.JPG)
 
 If you have already created an account, you can click "login". Otherwise, you can create a new user with the button "Create new user"
 
 From here, you will be redirected to this login page, where you enter your credentials.
 
-![login](https://github.com/gohars1/Shopify-Image-Repository/blob/main/readme-snapshots/loginscreen.JPG =75x75)
+![login](https://github.com/gohars1/Shopify-Image-Repository/blob/main/readme-snapshots/loginscreen.JPG)
 
 Once you are signed in, you will see the following screen:
 
-![main](https://github.com/gohars1/Shopify-Image-Repository/blob/main/readme-snapshots/mainmenu.JPG =75x75)
+![main](https://github.com/gohars1/Shopify-Image-Repository/blob/main/readme-snapshots/mainmenu.JPG)
 
 Click on "View Store" to buy images.
 
