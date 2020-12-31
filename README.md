@@ -45,3 +45,5 @@ Click on "View Store" to buy images.
 Once you buy the images you like, click the Home Button on the navbar.
 
 Now, click on the button "Your photos" and you should see a collection of the photos you purchased in your store.
+
+![alt text](https://github.com/gohars1/Shopify-Image-Repository/blob/main/readme-snapshots/photos.JPG)
