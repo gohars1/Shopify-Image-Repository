@@ -47,3 +47,7 @@ Once you buy the images you like, click the Home Button on the navbar.
 Now, click on the button "Your photos" and you should see a collection of the photos you purchased in your store.
 
 ![alt text](https://github.com/gohars1/Shopify-Image-Repository/blob/main/readme-snapshots/photos.JPG)
+
+### Future Considerations
+
+Additional features that could be added to the application include searching for photos, editing images and deleting photos. For search, I could have added functionality where photos in the store or in your personal repositroy are filtered by image name when a user enters words in the search bar. For editing, I could have either used javascript or a library which allows for users to draw on photos, add text, etc. I could have added an option for users to delete photos that they own, in case they no longer wanted certain photos in their repository.
